@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import { useApi } from '../hooks/useApi';
 
-const API_BASE_URL =
-  import.meta.env.VITE_CODESPACE_NAME
-    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api`
-    : 'https://localhost:8000/api';
-
 function Activities() {
   const [page, setPage] = useState(1);
   const { data: response, loading, error } = useApi(
-    `${API_BASE_URL}/activities?page=${page}`
+    `https://8000.app.github.dev/api/activities?page=${page}`
   );
 
   // Handle both paginated and array responses
