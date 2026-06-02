@@ -6,7 +6,7 @@ export function createApp(): Express {
   const port = process.env.PORT ? Number(process.env.PORT) : 8000;
   const codespaceName = process.env.CODESPACE_NAME;
   const apiUrl = codespaceName
-    ? `https://${codespaceName}-8000.app.github.dev`
+    ? `https://${codespaceName}--8000.app.github.dev`
     : `http://localhost:${port}`;
 
   app.use(express.json());
@@ -71,7 +71,7 @@ export function createApp(): Express {
 export function startServer(app: Express, port: number, mongoUri: string): void {
   const codespaceName = process.env.CODESPACE_NAME;
   const apiUrl = codespaceName
-    ? `https://${codespaceName}-8000.app.github.dev`
+    ? `https://${codespaceName}--8000.app.github.dev`
     : `http://localhost:${port}`;
 
   app.listen(port, () => {

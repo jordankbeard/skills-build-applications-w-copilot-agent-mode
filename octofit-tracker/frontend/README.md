@@ -71,7 +71,7 @@ npm preview
 
 The frontend uses a custom `useApi` hook to fetch data from the backend:
 
-- **Endpoint Pattern**: `https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/[endpoint]/`
+- **Endpoint Pattern**: `https://${VITE_CODESPACE_NAME}--8000.app.github.dev/api/[endpoint]/`
 - **Base URL Construction**: Automatically handled by `getApiBaseUrl()` function
 - **Fallback Handling**: If `VITE_CODESPACE_NAME` is unset, it falls back to `https://localhost:8000/api`
 

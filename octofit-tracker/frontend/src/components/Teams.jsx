@@ -4,7 +4,7 @@ import { useApi } from '../hooks/useApi';
 function Teams() {
   const [page, setPage] = useState(1);
   const { data: response, loading, error } = useApi(
-    `https://8000.app.github.dev/api/teams?page=${page}`
+    `https://-8000.app.github.dev/api/teams?page=${page}`
   );
 
   // Handle both paginated and array responses
