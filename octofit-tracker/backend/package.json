@@ -1,5 +1,5 @@
 {
-  "name": "octofit-tracker-backend",
+  "name": "octofit-tracker-backend", 
   "private": true,
   "version": "0.0.1",
   "main": "dist/index.js",
