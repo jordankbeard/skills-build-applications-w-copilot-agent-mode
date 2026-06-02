@@ -181,15 +181,15 @@ npx tsc --noEmit
 frontend/
 ├── src/
 │   ├── components/          # React components
-│   │   ├── Activities.tsx
-│   │   ├── Leaderboard.tsx
-│   │   ├── Teams.tsx
-│   │   ├── Users.tsx
-│   │   └── Workouts.tsx
+│   │   ├── Activities.jsx
+│   │   ├── Leaderboard.jsx
+│   │   ├── Teams.jsx
+│   │   ├── Users.jsx
+│   │   └── Workouts.jsx
 │   ├── hooks/               # Custom React hooks
-│   │   └── useApi.ts
-│   ├── App.tsx              # Main app with routing
-│   ├── main.tsx             # React entry point
+│   │   └── useApi.js
+│   ├── App.jsx              # Main app with routing
+│   ├── main.jsx             # React entry point
 │   └── index.css            # Global styles
 ├── .env.local.example       # Environment template
 ├── vite.config.ts           # Vite configuration
