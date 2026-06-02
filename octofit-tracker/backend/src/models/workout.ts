@@ -1,24 +1,23 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface WorkoutDoc extends Document {
-  id: string;
-  title: string;
+  _id: string;
+  name: string;
+  exercises: string[];
+  duration: number;
   difficulty: string;
-  durationMinutes: number;
-  focusAreas: string[];
-  experienceLevel: string;
+  description?: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const workoutSchema = new mongoose.Schema<WorkoutDoc>(
   {
-    id: { type: String, required: true, unique: true },
-    title: { type: String, required: true },
+    name: { type: String, required: true },
+    exercises: { type: [String], required: true, default: [] },
+    duration: { type: Number, required: true },
     difficulty: { type: String, required: true },
-    durationMinutes: { type: Number, required: true },
-    focusAreas: { type: [String], required: true, default: [] },
-    experienceLevel: { type: String, required: true },
+    description: { type: String },
   },
   {
     timestamps: true,

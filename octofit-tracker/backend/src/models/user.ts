@@ -1,20 +1,19 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface UserDoc extends Document {
-  id: string;
-  name: string;
+  _id: string;
+  username: string;
   email: string;
-  role: string;
+  team?: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const userSchema = new mongoose.Schema<UserDoc>(
   {
-    id: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
+    username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
-    role: { type: String, required: true, default: 'member' },
+    team: { type: String },
   },
   {
     timestamps: true,

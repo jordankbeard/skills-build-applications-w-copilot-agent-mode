@@ -16,28 +16,53 @@ export function createApp(): Express {
   });
 
   app.get('/api/users', async (_req, res) => {
-    const data = await User.find().sort({ name: 1 });
-    res.json({ data });
+    try {
+      const data = await User.find().sort({ username: 1 });
+      res.json({ data });
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
   });
 
   app.get('/api/teams', async (_req, res) => {
-    const data = await Team.find().sort({ name: 1 });
-    res.json({ data });
+    try {
+      const data = await Team.find().sort({ name: 1 });
+      res.json({ data });
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+      res.status(500).json({ error: 'Failed to fetch teams' });
+    }
   });
 
   app.get('/api/activities', async (_req, res) => {
-    const data = await Activity.find().sort({ date: -1 });
-    res.json({ data });
+    try {
+      const data = await Activity.find().sort({ date: -1 });
+      res.json({ data });
+    } catch (error) {
+      console.error('Error fetching activities:', error);
+      res.status(500).json({ error: 'Failed to fetch activities' });
+    }
   });
 
   app.get('/api/leaderboard', async (_req, res) => {
-    const data = await LeaderboardEntry.find().sort({ rank: 1 });
-    res.json({ data });
+    try {
+      const data = await LeaderboardEntry.find().sort({ score: -1 });
+      res.json({ data });
+    } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+      res.status(500).json({ error: 'Failed to fetch leaderboard' });
+    }
   });
 
   app.get('/api/workouts', async (_req, res) => {
-    const data = await Workout.find().sort({ title: 1 });
-    res.json({ data });
+    try {
+      const data = await Workout.find().sort({ name: 1 });
+      res.json({ data });
+    } catch (error) {
+      console.error('Error fetching workouts:', error);
+      res.status(500).json({ error: 'Failed to fetch workouts' });
+    }
   });
 
   return app;
