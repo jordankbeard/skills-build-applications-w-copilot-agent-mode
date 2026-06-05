@@ -14,7 +14,7 @@ Example base URL logic:
 ```ts
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev`
+  ? `https://${codespaceName}--8000.app.github.dev`
   : 'http://localhost:8000';
 ```
 

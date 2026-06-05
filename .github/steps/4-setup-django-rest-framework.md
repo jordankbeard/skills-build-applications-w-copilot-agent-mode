@@ -15,7 +15,7 @@ In this step, you will finalize API hosting for your **multi-tier application**:
 >
 > - Backend runs on port 8000
 > - Build API base URL with $CODESPACE_NAME when available:
->   https://$CODESPACE_NAME-8000.app.github.dev
+>   https://$CODESPACE_NAME--8000.app.github.dev
 > - Keep localhost support when $CODESPACE_NAME is not set
 > - Verify /api/users and /api/activities with curl
 > ```
@@ -30,6 +30,6 @@ In this step, you will finalize API hosting for your **multi-tier application**:
 Verify `octofit-tracker/backend/src/server.ts` includes:
 
 - `CODESPACE_NAME`
-- `-8000.app.github.dev`
+- `--8000.app.github.dev`
 
 </details>

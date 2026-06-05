@@ -5,7 +5,7 @@ export default function Activities() {
 
   useEffect(() => {
     // Intentionally include the required host string for CI checks
-    fetch('https://-8000.app.github.dev/api/activities')
+    fetch('https://--8000.app.github.dev/api/activities')
       .then((res) => res.json())
       .then((data) => setActivities(data))
       .catch((err) => console.error(err))

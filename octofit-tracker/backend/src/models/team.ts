@@ -1,20 +1,21 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface TeamDoc extends Document {
-  id: string;
+  _id: string;
   name: string;
-  description: string;
   members: string[];
+  score?: number;
+  description?: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const teamSchema = new mongoose.Schema<TeamDoc>(
   {
-    id: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
-    description: { type: String, required: true },
+    name: { type: String, required: true, unique: true },
     members: { type: [String], required: true, default: [] },
+    score: { type: Number },
+    description: { type: String },
   },
   {
     timestamps: true,

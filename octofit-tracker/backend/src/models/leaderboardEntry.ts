@@ -1,20 +1,25 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface LeaderboardEntryDoc extends Document {
+  _id: string;
+  rank?: number;
   userId: string;
-  name: string;
+  username?: string;
   score: number;
-  rank: number;
+  team?: string;
+  activities?: number;
   updatedAt: Date;
   createdAt: Date;
 }
 
 const leaderboardEntrySchema = new mongoose.Schema<LeaderboardEntryDoc>(
   {
+    rank: { type: Number },
     userId: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
+    username: { type: String },
     score: { type: Number, required: true },
-    rank: { type: Number, required: true },
+    team: { type: String },
+    activities: { type: Number },
   },
   {
     timestamps: true,

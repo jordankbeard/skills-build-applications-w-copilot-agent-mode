@@ -26,7 +26,7 @@ In this step, you will:
 > - Use Vite environment variables via `import.meta.env`, for example `import.meta.env.VITE_CODESPACE_NAME`
 > - Document that `VITE_CODESPACE_NAME` must be defined (for example in `.env.local`)
 > - Use API endpoints under:
->   https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/[component]/
+>   https://${import.meta.env.VITE_CODESPACE_NAME}--8000.app.github.dev/api/[component]/
 > - Add a safe fallback if `VITE_CODESPACE_NAME` is unset to avoid `https://undefined-8000...` URLs
 > - Keep compatibility with paginated and array responses
 > ```

@@ -1,30 +1,25 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface ActivityDoc extends Document {
-  id: string;
-  userId: string;
-  teamId?: string;
+  _id: string;
+  user: string;
   type: string;
-  durationMinutes: number;
+  duration: number;
   caloriesBurned: number;
-  distanceKm?: number;
   date: Date;
-  notes: string;
+  description?: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const activitySchema = new mongoose.Schema<ActivityDoc>(
   {
-    id: { type: String, required: true, unique: true },
-    userId: { type: String, required: true },
-    teamId: { type: String },
+    user: { type: String, required: true },
     type: { type: String, required: true },
-    durationMinutes: { type: Number, required: true },
+    duration: { type: Number, required: true },
     caloriesBurned: { type: Number, required: true },
-    distanceKm: { type: Number },
     date: { type: Date, required: true },
-    notes: { type: String, required: true },
+    description: { type: String },
   },
   {
     timestamps: true,
